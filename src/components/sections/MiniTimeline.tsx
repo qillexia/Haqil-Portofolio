@@ -26,11 +26,11 @@ export default function MiniTimeline() {
               </div>
 
               {/* Content */}
-              <GlassCard className="flex-1 p-4 sm:p-7 group-hover:border-white/10">
+              <GlassCard className="flex-1 p-6 md :p-4 sm:p-7 group-hover:border-white/10">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-l font-semibold text-white mb-1">{item.title}</h3>
-                    <p className="text-sm text-zinc-600 leading-relaxed">{item.description}</p>
+                    <h3 className="text-sm md:text-lg font-semibold text-white mb-3">{item.title}</h3>
+                    <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">{item.description}</p>
                   </div>
                   <span className="text-xs font-mono text-zinc-600 whitespace-nowrap flex-shrink-0">{item.year}</span>
                 </div>
