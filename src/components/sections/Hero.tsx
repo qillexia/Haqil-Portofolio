@@ -1,5 +1,6 @@
 // components/sections/Hero.tsx
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -54,10 +55,13 @@ export default function Hero() {
         <div className="relative w-full max-w-md aspect-square rounded-[2.5rem] p-2 bg-linear-to-br from-white/10 to-transparent backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-700 group-hover:rotate-1 animate-tilt">
           <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent rounded-[2.5rem] opacity-50 pointer-events-none"></div>
           <div className="w-full h-full rounded-[2rem] overflow-hidden relative z-10 bg-zinc-900/80">
-            <img 
+            <Image 
               alt="Portrait" 
-              className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-100 filter grayscale group-hover:grayscale-0" 
-              src="/simerah.png" 
+              src="/simerah.png"
+              fill
+              sizes="(max-width: 768px) 100vw, 448px"
+              priority
+              className="object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-100 filter grayscale group-hover:grayscale-0" 
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 flex items-center gap-3 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
