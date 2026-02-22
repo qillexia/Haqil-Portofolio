@@ -11,6 +11,14 @@ interface ScrollRevealProps {
   duration?: number;
 }
 
+const TRANSFORMS: Record<string, string> = {
+  up: 'translateY(2rem)',
+  down: 'translateY(-2rem)',
+  left: 'translateX(2rem)',
+  right: 'translateX(-2rem)',
+  none: 'none',
+};
+
 export default function ScrollReveal({
   children,
   className = '',
@@ -20,36 +28,15 @@ export default function ScrollReveal({
 }: ScrollRevealProps) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
-  const directionStyles: Record<string, string> = {
-    up: 'translate-y-8',
-    down: '-translate-y-8',
-    left: 'translate-x-8',
-    right: '-translate-x-8',
-    none: '',
-  };
-
   return (
     <div
       ref={ref}
-      className={`transition-all ease-out ${className}`}
+      className={`will-change-[transform,opacity] ${className}`}
       style={{
-        transitionDuration: `${duration}ms`,
-        transitionDelay: `${delay}ms`,
+        transition: `opacity ${duration}ms ease-out ${delay}ms, transform ${duration}ms ease-out ${delay}ms`,
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translate(0, 0)' : undefined,
+        transform: isVisible ? 'translate3d(0,0,0)' : TRANSFORMS[direction],
       }}
-      // Apply initial transform via className when not visible
-      {...(!isVisible && {
-        style: {
-          transitionDuration: `${duration}ms`,
-          transitionDelay: `${delay}ms`,
-          opacity: 0,
-          transform: direction === 'up' ? 'translateY(2rem)' :
-                     direction === 'down' ? 'translateY(-2rem)' :
-                     direction === 'left' ? 'translateX(2rem)' :
-                     direction === 'right' ? 'translateX(-2rem)' : 'none',
-        },
-      })}
     >
       {children}
     </div>

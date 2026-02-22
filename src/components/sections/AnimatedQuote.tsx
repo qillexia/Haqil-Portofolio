@@ -46,7 +46,7 @@ export default function AnimatedQuote() {
     <section className="w-full max-w-4xl py-0 sm:py-30 mb-30">
       <div className="flex flex-col items-center text-center gap-4">
         <span className="material-symbols-outlined text-zinc-700" style={{ fontSize: '3rem' }}>format_quote</span>
-        <p className="text-xl md:text-2xl font-light text-zinc-400 min-h-[2.5rem] tracking-wide">
+        <p className="text-xl md:text-2xl font-light text-zinc-400 min-h-[4rem] sm:min-h-[3rem] tracking-wide">
           {displayText}
           <span className="inline-block w-[2px] h-6 bg-primary ml-1 animate-blink align-middle"></span>
         </p>
