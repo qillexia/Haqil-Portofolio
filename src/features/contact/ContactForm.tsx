@@ -4,23 +4,35 @@ import { useState } from 'react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
 
-    // Buka email client dengan data form
-    const subject = encodeURIComponent(`Pesan dari ${formData.name}`);
-    const body = encodeURIComponent(
-      `Nama: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    );
-    window.location.href = `mailto:haqilabdillah@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-    setTimeout(() => {
-      setStatus('sent');
-      setTimeout(() => setStatus('idle'), 3000);
-    }, 500);
+      if (res.ok) {
+        setStatus('sent');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 4000);
+      } else {
+        throw new Error('Gagal mengirim');
+      }
+    } catch {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   return (
@@ -87,18 +99,30 @@ export default function ContactForm() {
         </div>
 
         {/* Submit */}
-        <button
-          type="submit"
-          disabled={status === 'sending'}
-          className="self-start inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-medium hover:bg-primary/20 hover:border-primary/40 disabled:opacity-50 transition-all duration-300"
-        >
-          <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-            {status === 'sent' ? 'check_circle' : 'send'}
-          </span>
-          {status === 'idle' && 'Kirim Pesan'}
-          {status === 'sending' && 'Mengirim...'}
-          {status === 'sent' && 'Terkirim!'}
-        </button>
+        <div className="flex items-center gap-4">
+          <button
+            type="submit"
+            disabled={status === 'sending'}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-medium hover:bg-primary/20 hover:border-primary/40 disabled:opacity-50 transition-all duration-300"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
+              {status === 'sent' ? 'check_circle' : status === 'error' ? 'error' : 'send'}
+            </span>
+            {status === 'idle' && 'Kirim Pesan'}
+            {status === 'sending' && 'Mengirim...'}
+            {status === 'sent' && 'Terkirim!'}
+            {status === 'error' && 'Gagal — coba lagi'}
+          </button>
+
+          {status === 'error' && (
+            <a
+              href="mailto:haqilabdillah@gmail.com"
+              className="text-xs text-zinc-500 hover:text-primary underline underline-offset-2"
+            >
+              Atau kirim email langsung
+            </a>
+          )}
+        </div>
       </form>
     </section>
   );

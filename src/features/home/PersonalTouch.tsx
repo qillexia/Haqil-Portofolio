@@ -3,7 +3,7 @@ import { PERSONAL_DATA } from '@/data';
 
 export default function PersonalTouch() {
   return (
-    <section className="w-full max-w-4xl">
+    <section className="w-full max-w-4xl min-h-[100dvh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center text-center gap-2 mb-10">
         <h2 className="text-2xl font-bold text-white tracking-tight">Beyond Code</h2>
         <p className="text-zinc-500 text-sm">Sedikit hal tentang saya di luar coding</p>

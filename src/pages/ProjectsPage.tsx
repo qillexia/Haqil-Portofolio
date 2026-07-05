@@ -1,12 +1,12 @@
-import Projects from '@/components/sections/Projects';
-import Certificates from '@/components/sections/Certificates';
-import ScrollReveal from '@/components/ui/ScrollReveal';
+﻿import Projects from '@/features/projects/Projects';
+import Certificates from '@/features/projects/Certificates';
+import AOSBox from '@/components/ui/AOSBox';
 
 export default function ProjectsPage() {
   return (
     <div className="w-full max-w-4xl mx-auto flex flex-col gap-20">
       {/* Header */}
-      <ScrollReveal>
+      <AOSBox data-aos="fade-up">
         <div className="flex flex-col gap-4">
           <p className="text-primary font-mono text-xs tracking-widest uppercase">$ ls ~/archive</p>
           <h1 className="text-4xl md:text-4xl font-bold tracking-tighter text-white leading-tight">Projects &<br className="hidden sm:block" /> Certifications</h1>
@@ -15,14 +15,14 @@ export default function ProjectsPage() {
           </p>
           <div className="h-px w-full bg-gradient-to-r from-zinc-800 via-zinc-700 to-transparent mt-2"></div>
         </div>
-      </ScrollReveal>
+      </AOSBox>
 
-      <ScrollReveal>
+      <AOSBox data-aos="fade-up" data-aos-delay="100">
         <Projects />
-      </ScrollReveal>
-      <ScrollReveal direction="up">
+      </AOSBox>
+      <AOSBox data-aos="fade-up" data-aos-delay="100">
         <Certificates />
-      </ScrollReveal>
+      </AOSBox>
     </div>
   );
 }

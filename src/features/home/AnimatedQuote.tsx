@@ -36,14 +36,17 @@ export default function AnimatedQuote() {
         return () => clearTimeout(timeout);
       } else {
         // Move to next quote
-        setCurrentQuote((prev) => (prev + 1) % QUOTES.length);
-        setIsTyping(true);
+        const timeout = setTimeout(() => {
+          setIsTyping(true);
+          setCurrentQuote((prev) => (prev + 1) % QUOTES.length);
+        }, 500);
+        return () => clearTimeout(timeout);
       }
     }
   }, [displayText, isTyping, currentQuote]);
 
   return (
-    <section className="w-full max-w-4xl py-0 sm:py-30 mb-30">
+    <section className="w-full max-w-4xl min-h-[100dvh] py-0 sm:py-20 flex flex-col items-center justify-center">
       <div className="flex flex-col items-center text-center gap-4">
         <span className="material-symbols-outlined text-zinc-700" style={{ fontSize: '3rem' }}>format_quote</span>
         <p className="text-xl md:text-2xl font-light text-zinc-400 min-h-[4rem] sm:min-h-[3rem] tracking-wide">

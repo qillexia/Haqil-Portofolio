@@ -3,7 +3,7 @@ import { TIMELINE_DATA } from '@/data';
 
 export default function MiniTimeline() {
   return (
-    <section className="w-full max-w-3xl">
+    <section className="w-full max-w-3xl flex flex-col items-center justify-center pb-20 sm:pb-28">
       <div className="flex flex-col items-center text-center gap-2 mb-10">
         <h2 className="text-2xl font-bold text-white tracking-tight">Journey</h2>
         <p className="text-zinc-500 text-l">Perjalanan singkat saya sejauh ini</p>
@@ -26,11 +26,11 @@ export default function MiniTimeline() {
               </div>
 
               {/* Content */}
-              <GlassCard className="flex-1 p-6 md :p-4 sm:p-7 group-hover:border-white/10">
+              <GlassCard className="flex-1 p-6 sm:p-7 group-hover:border-white/10">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h3 className="text-sm md:text-lg font-semibold text-white mb-3">{item.title}</h3>
-                    <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">{item.description}</p>
+                    <p className="text-xs md:text-sm text-zinc-500 leading-relaxed">{item.description}</p>
                   </div>
                   <span className="text-xs font-mono text-zinc-600 whitespace-nowrap flex-shrink-0">{item.year}</span>
                 </div>

@@ -32,11 +32,19 @@ export const TIMELINE_DATA = [
     active: false,
   },
   {
-    year: "Now",
+    year: "2026",
     title: "Beasiswa Dicoding x DBS Foundation",
     description:
       "Mengikuti kelas online di Dicoding dan meraih beasiswa progresif dari Dicoding DBS Foundation untuk memperdalam skill development.",
     tags: ["Dicoding", "DBS Foundation", "Beasiswa", "Online Class"],
-    active: true,
+    active: false,
+  },
+  {
+    year: "2026",
+    title: "Juara 2 PKM — Olimpiade Intelektual Mahasiswa Universitas Kuningan",
+    description:
+      "Meraih peringkat 2 dalam Program Kreativitas Mahasiswa (PKM) pada ajang Olimpiade Intelektual Mahasiswa Universitas Kuningan.",
+    tags: ["PKM", "Olimpiade Intelektual"],
+    active: false,
   },
 ];

@@ -9,13 +9,19 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tsparticles/engine": "^4.3.1",
+    "@tsparticles/react": "^4.3.1",
+    "@tsparticles/slim": "^4.3.1",
+    "aos": "^2.3.4",
     "autoprefixer": "^10.4.24",
+    "motion": "^12.42.2",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
+    "@types/aos": "^3.0.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
