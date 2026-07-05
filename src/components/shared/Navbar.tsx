@@ -7,7 +7,7 @@ import { NAV_LINKS } from '@/data';
 
 function NavbarInner() {
   const searchParams = useSearchParams();
-  const currentPage = searchParams.get('page') || 'home';
+  const currentPage = searchParams?.get('page') || 'home';
 
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
