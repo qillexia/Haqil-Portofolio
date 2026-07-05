@@ -12,7 +12,6 @@ const playfair = Playfair_Display({
 const robotoFlex = Roboto_Flex({
   subsets: ['latin'],
   display: 'swap',
-  axes: ['wght'],
 });
 
 function PortfolioHoverText() {
