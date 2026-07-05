@@ -48,22 +48,25 @@ export default function Background() {
         value: { min: 1.5, max: 4 },
       },
     },
-    ...(isHoverable && {
-      interactivity: {
-        events: {
+    interactivity: {
+      events: {
+        resize: { enable: false },
+        ...(isHoverable && {
           onHover: {
             enable: true,
             mode: 'grab',
           },
-        },
+        }),
+      },
+      ...(isHoverable && {
         modes: {
           grab: {
             distance: 200,
             links: { opacity: 0.5 },
           },
         },
-      },
-    }),
+      }),
+    },
     detectRetina: true,
   }), [isHoverable]);
   return (
