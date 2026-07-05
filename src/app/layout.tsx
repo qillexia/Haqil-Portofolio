@@ -24,7 +24,7 @@ export default function RootLayout({
         {/* Load Material Symbols untuk Icon */}
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.className} bg-zinc-950 text-white min-h-[100svh] relative overflow-x-hidden selection:bg-primary/30 selection:text-white`}>
+      <body className={`${inter.className} bg-zinc-950 text-white min-h-[100svh] relative overflow-x-hidden overscroll-none selection:bg-primary/30 selection:text-white`}>
         <AOSLoader />
         <Background />
         <Navbar />
