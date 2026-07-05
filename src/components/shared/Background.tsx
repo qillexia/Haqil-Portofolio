@@ -69,10 +69,10 @@ export default function Background() {
   return (
     <>
       {/* Base mesh gradient */}
-      <div className="fixed top-0 left-0 w-full h-[100svh] bg-mesh z-[-2]" />
+      <div className="fixed top-0 left-0 w-full h-[100lvh] bg-mesh z-[-2]" />
 
       {/* tsParticles network — floating connected dots */}
-      <div className="fixed top-0 left-0 w-full h-[100svh] z-[-1] pointer-events-none">
+      <div className="fixed top-0 left-0 w-full h-[100lvh] z-[-1] pointer-events-none">
         <ParticlesProvider init={async (engine: Engine) => { await loadSlim(engine); }}>
           <Particles key={isHoverable ? 'hover' : 'no-hover'} id="tsparticles" options={particleOptions} />
         </ParticlesProvider>
