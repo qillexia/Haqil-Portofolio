@@ -46,7 +46,7 @@ export default function AnimatedQuote() {
   }, [displayText, isTyping, currentQuote]);
 
   return (
-    <section className="w-full max-w-4xl min-h-[100dvh] py-0 sm:py-20 flex flex-col items-center justify-center">
+    <section className="w-full max-w-4xl min-h-[100svh] py-0 sm:py-20 flex flex-col items-center justify-center">
       <div className="flex flex-col items-center text-center gap-4">
         <span className="material-symbols-outlined text-zinc-700" style={{ fontSize: '3rem' }}>format_quote</span>
         <p className="text-xl md:text-2xl font-light text-zinc-400 min-h-[4rem] sm:min-h-[3rem] tracking-wide">

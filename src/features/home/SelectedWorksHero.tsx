@@ -94,7 +94,7 @@ function PortfolioHoverText() {
 
 export default function SelectedWorksHero() {
   return (
-    <section className="relative flex flex-col items-center justify-center w-full min-h-[80dvh] overflow-hidden sm-mb-0 mb-10">
+    <section className="relative flex flex-col items-center justify-center w-full min-h-[80svh] overflow-hidden sm-mb-0 mb-10">
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-3 sm:gap-5 lg:gap-8 px-4 text-center">
         {/* Main title */}

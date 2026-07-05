@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
@@ -24,11 +24,11 @@ export default function RootLayout({
         {/* Load Material Symbols untuk Icon */}
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.className} bg-zinc-950 text-white min-h-screen relative overflow-x-hidden selection:bg-primary/30 selection:text-white`}>
+      <body className={`${inter.className} bg-zinc-950 text-white min-h-[100svh] relative overflow-x-hidden selection:bg-primary/30 selection:text-white`}>
         <AOSLoader />
         <Background />
         <Navbar />
-        <main className="relative z-10 flex flex-col items-center pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 max-w-7xl mx-auto w-full min-h-[calc(100vh-200px)]">
+        <main className="relative z-10 flex flex-col items-center pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 max-w-7xl mx-auto w-full min-h-[calc(100svh-200px)]">
           {children}
         </main>
         <Footer />

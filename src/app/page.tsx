@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -37,7 +37,7 @@ function PageContent() {
 
 export default function Page() {
   return (
-    <Suspense fallback={<div className="flex items-center justify-center min-h-[50vh]"><div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" /></div>}>
+    <Suspense fallback={<div className="flex items-center justify-center min-h-[50svh]"><div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" /></div>}>
       <PageContent />
     </Suspense>
   );

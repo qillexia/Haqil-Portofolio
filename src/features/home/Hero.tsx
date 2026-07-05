@@ -23,7 +23,7 @@ const caveat = Caveat({
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center justify-center w-full min-h-[100dvh] overflow-hidden px-4 sm:px-8 lg:px-16">
+    <section className="relative flex items-center justify-center w-full min-h-[100svh] overflow-hidden px-4 sm:px-8 lg:px-16">
       <div className="relative z-10 flex flex-col-reverse sm:flex-row items-center sm:items-center gap-6 sm:gap-10 lg:gap-20 w-full max-w-6xl">
         {/* Left: Content */}
         <div className="flex flex-col items-start gap-4 sm:gap-7 text-left flex-1">

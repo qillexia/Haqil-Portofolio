@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-6 text-center">
+    <div className="flex flex-col items-center justify-center min-h-[60svh] gap-6 text-center">
       <p className="text-primary font-mono text-xs tracking-widest uppercase">$ 404</p>
       <h1 className="text-5xl font-bold tracking-tighter text-white">Halaman tidak ditemukan</h1>
       <p className="text-zinc-500 text-sm max-w-md">

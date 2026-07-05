@@ -49,6 +49,20 @@ const particleOptions: ISourceOptions = {
       },
     },
   },
+  responsive: [
+    {
+      maxWidth: 768,
+      options: {
+        interactivity: {
+          events: {
+            onHover: {
+              enable: false,
+            },
+          },
+        },
+      },
+    },
+  ],
   detectRetina: true,
 };
 
