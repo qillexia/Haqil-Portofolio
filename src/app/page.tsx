@@ -16,7 +16,7 @@ const PAGE_META: Record<string, { title: string; desc: string }> = {
 
 function PageContent() {
   const searchParams = useSearchParams();
-  const page = searchParams.get('page') || 'home';
+  const page = searchParams?.get('page') || 'home';
 
   useEffect(() => {
     const meta = PAGE_META[page] || PAGE_META.home;
